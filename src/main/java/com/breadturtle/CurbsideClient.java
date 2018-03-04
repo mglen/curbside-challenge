@@ -23,7 +23,11 @@ class CurbsideClient {
         this.baseTarget = ClientBuilder.newClient()
                 .register(jacksonJsonProvider)
                 .target("https://challenge.curbside.com/");
-        this.session = this.baseTarget.path("get-session").request().get(Session.class);
+        this.session = getSession();
+    }
+
+    private Session getSession() {
+        return this.baseTarget.path("get-session").request().get(Session.class);
     }
 
     ChallengeResponse getChallenge(String id) {
