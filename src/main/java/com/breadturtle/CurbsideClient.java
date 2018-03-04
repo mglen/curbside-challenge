@@ -27,7 +27,9 @@ class CurbsideClient {
     }
 
     ChallengeResponse getChallenge(String id) {
-        return this.baseTarget.path(id).request().header("Session", session.getId()).get(ChallengeResponse.class);
+        return this.baseTarget.path(id).request()
+                .header("Session", session.getId())
+                .get(ChallengeResponse.class);
     }
 
     String getSessionId() {

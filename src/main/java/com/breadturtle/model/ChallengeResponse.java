@@ -1,12 +1,10 @@
 package com.breadturtle.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.JsonNode;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class ChallengeResponse {
     private Integer depth;
     private String id;
@@ -30,9 +28,6 @@ public class ChallengeResponse {
     }
 
     public void setSecret(String secret) {
-        if (!secret.isEmpty()) {
-            System.out.println(secret);
-        }
         this.secret = secret;
     }
 
